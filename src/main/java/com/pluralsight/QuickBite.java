@@ -42,12 +42,12 @@ public class QuickBite {
 
     // Displays the options available on the home screen.
     public static void displayHomeScreen() {
-        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
-        System.out.println("~~~~~~~~~~~~~~~~ Welcome to the Home of QuickBite ~~~~~~~~~~~~~~~~");
-        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        System.out.println("-------------------------------------------------------------------");
+        System.out.println("---------------- Welcome to the Home of QuickBite -----------------");
+        System.out.println("-------------------------------------------------------------------");
         System.out.println("1) New Order");
         System.out.println("0) Exit");
-        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        System.out.println("-------------------------------------------------------------------");
     }
     //Prompts the user for a numerical choice and validates it within a given range.
     public static int getValidatedMenuChoice(int min, int max, String prompt) {
@@ -107,7 +107,7 @@ public class QuickBite {
 
     // Displays the options available on the order screen, including current order summary.
     public static void displayOrderScreen() {
-        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Order Menu ~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        System.out.println("------------------------ Order Menu ------------------------");
         System.out.println("Current Order Items:");
         System.out.println(currentOrder.toString()); // Display the detailed summary of the current order.
 
@@ -121,7 +121,7 @@ public class QuickBite {
 
     // Guides the user through customizing and adding a new sandwich to the order.
     public static void addSandwichScreen() {
-        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~ Order Sandwich ~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        System.out.println("------------------------ Order Sandwich ------------------------");
 
         // Prompt user to choose between custom and signature sandwich.
         int sandwichTypeChoice = getValidatedMenuChoice(1, 2, "1) Custom Sandwich\n2) Signature Sandwich\nPlease select: ");
@@ -129,7 +129,7 @@ public class QuickBite {
 
         // Signature Sandwich
         if (sandwichTypeChoice == 2) {
-            System.out.println("~~~~~~~~~~~~~~~~~~ Select Signature Sandwich ~~~~~~~~~~~~~~~~~~~~~~");
+            System.out.println("------------------------ Select Signature Sandwich ------------------------");
             System.out.println("1) BLT (8\" White, Bacon, Cheddar, Lettuce, Tomato, Ranch, Toasted)");
             System.out.println("2) Philly Cheese Steak (8\" White, Steak, American, Peppers, Mayo, Toasted)");
             int signatureChoice = getValidatedMenuChoice(1, 2, "Please select: ");
@@ -150,7 +150,7 @@ public class QuickBite {
 
         } else { // Custom Sandwich (sandwichTypeChoice == 1)
             List<String> breadOptions = Arrays.asList("white", "wheat", "rye", "wrap");
-            System.out.println("~~~~~~~~~~~~~~~~~~~~~~ Select your bread ~~~~~~~~~~~~~~~~~~~~~~~~~~");
+            System.out.println("------------------------ Select your bread ------------------------");
             for (int i = 0; i < breadOptions.size(); i++) {
                 System.out.println((i + 1) + ") " + breadOptions.get(i));
             }
@@ -158,7 +158,7 @@ public class QuickBite {
             String bread = breadOptions.get(breadChoice - 1);
 
             List<String> sizeOptions = Arrays.asList("4\"", "8\"", "12\"");
-            System.out.println("~~~~~~~~~~~~~~~~~~~~~ Select sandwich size ~~~~~~~~~~~~~~~~~~~~~~~~");
+            System.out.println("------------------------ Select sandwich size ------------------------");
             for (int i = 0; i < sizeOptions.size(); i++) {
                 System.out.println((i + 1) + ") " + sizeOptions.get(i));
             }
@@ -177,7 +177,7 @@ public class QuickBite {
     private static void customizeSandwich(Sandwich sandwich) {
         int customizationChoice;
         do {
-            System.out.println("~~~~~~~~~~~~~~~~~~~~~~ Customize Sandwich ~~~~~~~~~~~~~~~~~~~~~~~~~");
+            System.out.println("------------------------ Customize Sandwich ------------------------");
             System.out.println("1) Add Meats");
             System.out.println("2) Add Cheeses");
             System.out.println("3) Add Other Toppings");
@@ -206,8 +206,8 @@ public class QuickBite {
     private static void addMeatsToSandwich(Sandwich sandwich) {
         List<String> meatOptions = Arrays.asList("steak", "ham", "salami", "roast beef", "chicken", "bacon");
         while (true) {
-            System.out.println("~~~~~~~~~~~~~~~~~~~~~ Select sandwich size ~~~~~~~~~~~~~~~~~~~~~~~~");
-            System.out.println("~~~~~~~~~~~~~~ Add meats (Select 0 to finish) ~~~~~~~~~~~~~~~~~~~~~~");
+            System.out.println("------------------------ Select sandwich size ------------------------");
+            System.out.println("---------------- Add meats (Select 0 to finish) ----------------");
             for (int i = 0; i < meatOptions.size(); i++) {
                 System.out.println((i + 1) + ") " + meatOptions.get(i));
             }
@@ -224,7 +224,7 @@ public class QuickBite {
     private static void addCheesesToSandwich(Sandwich sandwich) {
         List<String> cheeseOptions = Arrays.asList("american", "provolone", "cheddar", "swiss");
         while (true) {
-            System.out.println("~~~~~~~~~~~~~ Add cheeses (Select 0 to finish) ~~~~~~~~~~~~~~~~~~~~~");
+            System.out.println("------------------------ Add cheeses (Select 0 to finish) ------------------------");
             for (int i = 0; i < cheeseOptions.size(); i++) {
                 System.out.println((i + 1) + ") " + cheeseOptions.get(i));
             }
@@ -241,7 +241,7 @@ public class QuickBite {
     private static void addRegularToppingsToSandwich(Sandwich sandwich) {
         List<String> regularToppingOptions = Arrays.asList("lettuce", "peppers", "onions", "tomatoes", "jalapeños", "cucumbers", "pickles", "guacamole", "mushrooms");
         while (true) {
-            System.out.println("~~~~~~~~~~ Add other toppings (Select 0 to finish) ~~~~~~~~~~~~~~~~~");
+            System.out.println("-------- Add other toppings (Select 0 to finish) --------");
             for (int i = 0; i < regularToppingOptions.size(); i++) {
                 System.out.println((i + 1) + ") " + regularToppingOptions.get(i));
             }
@@ -256,7 +256,7 @@ public class QuickBite {
     private static void addSaucesToSandwich(Sandwich sandwich) {
         List<String> sauceOptions = Arrays.asList("mayo", "mustard", "ketchup", "ranch", "thousand islands", "vinaigrette");
         while (true) {
-            System.out.println("~~~~~~~~~~~~ Select sauces (Select 0 to finish) ~~~~~~~~~~~~~~~~~~~~");
+            System.out.println("-------- Select sauces (Select 0 to finish) --------");
             for (int i = 0; i < sauceOptions.size(); i++) {
                 System.out.println((i + 1) + ") " + sauceOptions.get(i));
             }
@@ -271,7 +271,7 @@ public class QuickBite {
     private static void addSidesToSandwich(Sandwich sandwich) {
         List<String> sideOptions = Arrays.asList("au jus sauce"); // Only one side mentioned in doc.
         while (true) {
-            System.out.println("~~~~~~~~~~~~ Select sides (Select 0 to finish) ~~~~~~~~~~~~~~~~~~~~~");
+            System.out.println("-------- Select sides (Select 0 to finish) --------");
             for (int i = 0; i < sideOptions.size(); i++) {
                 System.out.println((i + 1) + ") " + sideOptions.get(i));
             }
@@ -291,7 +291,7 @@ public class QuickBite {
 
     //Allows the user to remove a topping, sauce, or side from a specific sandwich.
     private static void removeToppingFromSandwich(Sandwich sandwich) {
-        System.out.println("~~~~~~~~~~Remove Topping/Sauce/Side from Sandwich ~~~~~~~~~~~~~~~~~~");
+        System.out.println("-------- Remove Topping/Sauce/Side from Sandwich --------");
         System.out.println("Current toppings on this sandwich:");
         System.out.println("  Meats: " + (sandwich.getMeats().isEmpty() ? "None" : String.join(", ", sandwich.getMeats())));
         System.out.println("  Cheeses: " + (sandwich.getCheeses().isEmpty() ? "None" : String.join(", ", sandwich.getCheeses())));
@@ -415,10 +415,10 @@ public class QuickBite {
 
     // Guides the user through selecting and adding a new drink to the order.
     public static void addDrinkScreen() {
-        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Add Drink ~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        System.out.println("------------------------ Add Drink ------------------------");
 
         List<String> drinkFlavors = Arrays.asList("Coke", "Sprite", "Water", "Orange Juice", "Lemonade", "Soda");
-        System.out.println("~~~~~~~~~~~~~~~~~~~~~~ Select drink flavor ~~~~~~~~~~~~~~~~~~~~~~~~~");
+        System.out.println("------------------------ Select drink flavor ------------------------");
         for (int i = 0; i < drinkFlavors.size(); i++) {
             System.out.println((i + 1) + ") " + drinkFlavors.get(i));
         }
@@ -426,7 +426,7 @@ public class QuickBite {
         String flavor = drinkFlavors.get(flavorChoice - 1);
 
         List<String> drinkSizes = Arrays.asList("Small", "Medium", "Large");
-        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~ Select drink size ~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        System.out.println("------------------------ Select drink size ------------------------");
         for (int i = 0; i < drinkSizes.size(); i++) {
             System.out.println((i + 1) + ") " + drinkSizes.get(i));
         }
@@ -440,10 +440,10 @@ public class QuickBite {
 
     // Guides the user through selecting and adding new chips to the order.
     public static void addChipsScreen() {
-        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ Add Chips ~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        System.out.println("------------------------ Add Chips ------------------------");
 
         List<String> chipTypes = Arrays.asList("Regular", "BBQ", "Salt & Vinegar", "Cheese Puffs", "Ruffles");
-        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~ Select chip type ~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        System.out.println("------------------------ Select chip type ------------------------");
         for (int i = 0; i < chipTypes.size(); i++) {
             System.out.println((i + 1) + ") " + chipTypes.get(i));
         }
@@ -457,7 +457,7 @@ public class QuickBite {
 
     //Allows the user to remove a previously added item (Sandwich, Drink, or Chips) from the current order.
     public static void removeItemFromOrderScreen() {
-        System.out.println("~~~~~~~~~~~~~~~~~~~~~ Remove Item from Order ~~~~~~~~~~~~~~~~~~~~~~~");
+        System.out.println("------------------------ Remove Item from Order ------------------------");
 
         // Display current order items with numbers for selection.
         System.out.println(currentOrder.toString());
@@ -485,7 +485,7 @@ public class QuickBite {
                     System.out.println("No sandwiches in the order to remove.");
                     break;
                 }
-                System.out.println("~~~~~~~~~~~~~~~~~~ Select Sandwich to Remove ~~~~~~~~~~~~~~~~~~~~~~");
+                System.out.println("------------------------ Select Sandwich to Remove ------------------------");
                 for (int i = 0; i < currentOrder.getSandwiches().size(); i++) {
                     System.out.println((i + 1) + ") " + currentOrder.getSandwiches().get(i).getName());
                 }
@@ -502,7 +502,7 @@ public class QuickBite {
                     System.out.println("No drinks in the order to remove.");
                     break;
                 }
-                System.out.println("~~~~~~~~~~~~~~~~~~~~~ Select Drink to Remove ~~~~~~~~~~~~~~~~~~~~~~~");
+                System.out.println("------------------------ Select Drink to Remove ------------------------");
                 for (int i = 0; i < currentOrder.getDrinks().size(); i++) {
                     System.out.println((i + 1) + ") " + currentOrder.getDrinks().get(i).getName());
                 }
@@ -519,7 +519,7 @@ public class QuickBite {
                     System.out.println("No chips in the order to remove.");
                     break;
                 }
-                System.out.println("~~~~~~~~~~~~~~~~~~~~ Select Chips to Remove ~~~~~~~~~~~~~~~~~~~~~~~~");
+                System.out.println("------------------------ Select Chips to Remove ------------------------");
                 for (int i = 0; i < currentOrder.getChips().size(); i++) {
                     System.out.println((i + 1) + ") " + currentOrder.getChips().get(i).getName());
                 }
@@ -540,7 +540,7 @@ public class QuickBite {
 
     // Handles the checkout process, displaying the final order and prompting for confirmation.
     public static void checkoutScreen() {
-        System.out.println("~~~~~~~~~~~~~~~~~~~~~~~~~~ Checkout ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        System.out.println("------------------------ Checkout ------------------------");
         // Check if the order is empty before proceeding to checkout.
         if (currentOrder.getSandwiches().isEmpty() && currentOrder.getDrinks().isEmpty() && currentOrder.getChips().isEmpty()) {
             System.out.println("Your order is empty. Please add items before checking out.");
@@ -588,7 +588,7 @@ public class QuickBite {
 
         try (FileWriter writer = new FileWriter(fileName)) { // Use try-with-resources for automatic closing.
             // Add date and time to the top of the receipt content.
-            writer.write("~~~~~~~~~~~~~~~~~~ QuickBite Receipt ~~~~~~~~~~~~~~~~~~~~~~~~\n");
+            writer.write("──────────────────────── QuickBite Receipt ────────────────────────\n");
             writer.write("Date and Time: " + now.format(contentFormatter) + "\n");
             writer.write(order.toString()); // Write the order summary to the file.
             System.out.println("Receipt saved to: " + fileName);

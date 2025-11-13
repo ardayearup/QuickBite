@@ -98,7 +98,7 @@ public class Order {
     @Override
     public String toString() {
         StringBuilder orderSummary = new StringBuilder();
-        orderSummary.append("~~~~~~~~~~~~~~~~~~~~~~~~ Your Order Details ~~~~~~~~~~~~~~~~~~~~~~\n");
+        orderSummary.append("------------------------ Your Order Details ------------------------\n");
 
         // Check if the order is empty and return appropriate message.
         if (sandwiches.isEmpty() && drinks.isEmpty() && chips.isEmpty()) {
@@ -133,7 +133,7 @@ public class Order {
 
         // Append the total calculated cost of the order.
         orderSummary.append(String.format("\nTotal Cost: $%.2f\n", calculateTotalPrice()));
-        orderSummary.append("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+        orderSummary.append("────────────────────────────────────────────────\n");
         return orderSummary.toString();
     }
 }

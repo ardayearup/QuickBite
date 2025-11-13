@@ -1,0 +1,25 @@
+──────────────────────── QuickBite Receipt ────────────────────────
+Date and Time: 2025-11-13 12:35:59
+------------------------ Your Order Details ------------------------
+Sandwiches:
+  1. 12" rye Sandwich (Not Toasted) with:
+      Meats: roast beef, steak
+      Extra Meats: 1 portions
+      Cheeses: cheddar
+      Sauces: ketchup, ranch
+      Price: $18.25
+  2. 8" white Sandwich (Toasted) with:
+      Meats: bacon
+      Cheeses: cheddar
+      Other Toppings: lettuce, tomato
+      Sauces: ranch
+      Price: $10.50
+
+Drinks:
+  1. Large Coke Drink - $3.00
+
+Chips:
+  1. Cheese Puffs Chips - $1.50
+
+Total Cost: $33.25
+────────────────────────────────────────────────
